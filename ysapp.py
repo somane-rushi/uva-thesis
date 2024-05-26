@@ -16,17 +16,19 @@ ultralytics.checks()
 model = YOLO('yolov8n.pt')
 
 # Set image source
-main_img = 'original/SK-C-535.jpg'
+main_img = 'original/SK-A-1856.jpg'
+main_img_name = os.path.splitext(os.path.basename(main_img))[0]
 # Change this as per the detected class
-class_id = 48
+class_id = 0
 
 results = model.predict(source=main_img, conf=0.015, classes=[class_id])
 
 # Known classes
 class_names = {
-    0: 'person',  8: 'boat', 13: 'bench', 14: 'bird', 15: 'cat', 16: 'dog', 26: 'handbag', 28: 'suitcase', 39: 'bottle',        40: 'wine glass',
-    41: 'cup', 42: 'fork', 43: 'knife', 44: 'spoon', 45: 'bowl', 46: 'banana',
-    47: 'apple', 48: 'sandwich', 49: 'orange', 54: 'donut', 55: 'cake', 56: 'chair', 58: 'potted plant', 60: 'dining table',
+    0: 'person',  8: 'boat', 13: 'bench', 14: 'bird', 15: 'cat', 16: 'dog', 17: 'horse', 18: 'sheep', 19: 'cow',               
+    26: 'handbag', 28: 'suitcase', 39: 'bottle', 40: 'wine glass', 41: 'cup', 42: 'fork', 43: 'knife', 44: 'spoon', 
+    45: 'bowl', 46: 'banana', 47: 'apple', 48: 'sandwich', 49: 'orange', 54: 'donut', 55: 'cake', 56: 'chair', 
+    58: 'potted plant', 60: 'dining table',
     73: 'book', 75: 'vase'
 }
 
@@ -83,7 +85,7 @@ output_base_dir = 'runs'
 if not os.path.exists(output_base_dir):
     os.makedirs(output_base_dir)
 
-output_dir_base = os.path.join(output_base_dir, os.path.splitext(os.path.basename(main_img))[0] + "_output")
+output_dir_base = os.path.join(output_base_dir, f"{main_img_name}_output")
 output_dir = output_dir_base
 counter = 1
 while os.path.exists(output_dir):
@@ -99,19 +101,8 @@ show_box(input_box, ax)
 ax.axis('off')
 
 # Save the image with mask
-output_image_path = os.path.join(output_dir, f'output_image_with_mask_{class_name}.jpg')
+output_image_path = os.path.join(output_dir, f'Mask_{main_img_name}_{class_name}.jpg')
 plt.savefig(output_image_path, bbox_inches='tight', pad_inches=0, dpi=100)
-
-# Save bounding box coordinates
-bbox_path = os.path.join(output_dir, 'bbox_coordinates.json')
-with open(bbox_path, 'w') as f:
-    json.dump(bbox, f)  # No need for .tolist()
-
-# Save mask coordinates
-mask_coords = np.column_stack(np.where(masks[0] == True)).tolist()
-mask_coords_path = os.path.join(output_dir, 'mask_coordinates.json')
-with open(mask_coords_path, 'w') as f:
-    json.dump(mask_coords, f)
 
 # Create and save segmented image with transparent background
 segmentation_mask = masks[0]
@@ -126,7 +117,7 @@ new_image[..., :3] = image * binary_mask[..., np.newaxis]
 new_image[..., 3] = binary_mask * 255
 
 # Convert to PIL Image and save
-segmented_image_path = os.path.join(output_dir, 'segmented_image.png')
+segmented_image_path = os.path.join(output_dir, f'Segment_{main_img_name}_{class_name}.png')
 segmented_image_pil = PILImage.fromarray(new_image)
 segmented_image_pil.save(segmented_image_path)
 
@@ -137,6 +128,20 @@ with PILImage.open(output_image_path) as img:
         new_height = int((1500 / img_width) * img_height)
         resized_img = img.resize((1500, new_height), PILImage.Resampling.LANCZOS)
         resized_img.save(output_image_path)
+
+# Calculate bounding box coordinates in percentages relative to the original image dimensions
+img_height, img_width = image.shape[:2]
+percent_bbox = {
+    "width": round((bbox[2] - bbox[0]) / img_width * 100, 1),
+    "height": round((bbox[3] - bbox[1]) / img_height * 100, 1),
+    "top": round(bbox[1] / img_height * 100, 1),
+    "left": round(bbox[0] / img_width * 100, 1)
+}
+
+# Save the bounding box details in percentages to a separate JSON file
+percent_bbox_path = os.path.join(output_dir, 'percent_bbox_coordinates.json')
+with open(percent_bbox_path, 'w') as f:
+    json.dump(percent_bbox, f)
 
 # Display the final output image
 # plt.show()

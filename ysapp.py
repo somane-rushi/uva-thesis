@@ -1,6 +1,6 @@
 import ultralytics
 from ultralytics import YOLO
-from segment_anything import sam_model_registry, SamAutomaticMaskGenerator, SamPredictor
+from segment_anything import sam_model_registry, SamPredictor
 from IPython.display import display, Image
 import cv2
 import numpy as np
@@ -16,10 +16,10 @@ ultralytics.checks()
 model = YOLO('yolov8n.pt')
 
 # Set image source
-main_img = 'original/SK-A-1856.jpg'
+main_img = 'original/SK-A-2344.jpg'
 main_img_name = os.path.splitext(os.path.basename(main_img))[0]
 # Change this as per the detected class
-class_id = 0
+class_id = 45
 
 results = model.predict(source=main_img, conf=0.015, classes=[class_id])
 
@@ -33,10 +33,8 @@ class_names = {
 }
 
 # Extract bounding box coordinates
-for result in results:
-    boxes = result.boxes
-
-bbox = boxes.xyxy.tolist()[0]
+bbox = results[0].boxes.xyxy[0].cpu().numpy()
+x_min, y_min, x_max, y_max = bbox
 
 class_name = class_names[class_id]
 
@@ -69,10 +67,11 @@ def show_points(coords, labels, ax, marker_size=375):
 def show_box(box, ax):
     x0, y0 = box[0], box[1]
     w, h = box[2] - box[0], box[3] - box[1]
-    ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0,0,0,0), lw=2))
+    ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='#d55140', facecolor=(0,0,0,0), lw=2))
+    return w, h, y0, x0 
 
 # Generate mask
-input_box = np.array(bbox)
+input_box = np.array([x_min, y_min, x_max, y_max])
 masks, _, _ = predictor.predict(
     point_coords=None,
     point_labels=None,
@@ -94,10 +93,10 @@ while os.path.exists(output_dir):
 os.makedirs(output_dir)
 
 # Plot and save the image with the mask
-fig, ax = plt.subplots(figsize=(15, 15))  # Set figure size to 1500 pixels width
+fig, ax = plt.subplots(figsize=(12, 12))  # Set figure size to 1200 pixels width
 ax.imshow(image)
 show_mask(masks[0], ax)
-show_box(input_box, ax)
+width, height, top, left = show_box(input_box, ax)
 ax.axis('off')
 
 # Save the image with mask
@@ -121,27 +120,32 @@ segmented_image_path = os.path.join(output_dir, f'Segment_{main_img_name}_{class
 segmented_image_pil = PILImage.fromarray(new_image)
 segmented_image_pil.save(segmented_image_path)
 
-# Resize output_image_with_mask to 1500px width if it's not already
+# Resize output_image_with_mask to 1200px width if it's not already
 with PILImage.open(output_image_path) as img:
     img_width, img_height = img.size
-    if img_width != 1500:
-        new_height = int((1500 / img_width) * img_height)
-        resized_img = img.resize((1500, new_height), PILImage.Resampling.LANCZOS)
+    if img_width != 1200:
+        new_height = int((1200 / img_width) * img_height)
+        resized_img = img.resize((1200, new_height), PILImage.Resampling.LANCZOS)
         resized_img.save(output_image_path)
 
-# Calculate bounding box coordinates in percentages relative to the original image dimensions
-img_height, img_width = image.shape[:2]
-percent_bbox = {
-    "width": round((bbox[2] - bbox[0]) / img_width * 100, 1),
-    "height": round((bbox[3] - bbox[1]) / img_height * 100, 1),
-    "top": round(bbox[1] / img_height * 100, 1),
-    "left": round(bbox[0] / img_width * 100, 1)
+# Calculate scaling factor
+scaling_factor = 1200 / image.shape[1]
+
+# Normalize top and left values
+top_normalized = top * scaling_factor
+left_normalized = left * scaling_factor
+
+# Save the bounding box details in pixels to a separate JSON file
+bbox_details = {
+    "width": round(width * scaling_factor),
+    "height": round(height * scaling_factor),
+    "top": round(top_normalized),
+    "left": round(left_normalized)
 }
 
-# Save the bounding box details in percentages to a separate JSON file
-percent_bbox_path = os.path.join(output_dir, 'percent_bbox_coordinates.json')
-with open(percent_bbox_path, 'w') as f:
-    json.dump(percent_bbox, f)
+bbox_path = os.path.join(output_dir, 'bbox_coordinates.json')
+with open(bbox_path, 'w') as f:
+    json.dump(bbox_details, f)
 
 # Display the final output image
-# plt.show()
+#plt.show()

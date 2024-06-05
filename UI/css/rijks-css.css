@@ -217,7 +217,8 @@ p.fontQ{
     animation: colorChange 1.75s infinite;
 }
 
-.hoverTxt:hover{
+.hoverTxt:hover,
+.hoverTxt.active{
     color: #d55140 !important;
 }
 
@@ -340,6 +341,7 @@ p.fontQ{
     margin: 0 auto;
     padding: 0px 0px 48px;
     width: 100%;
+    border-top: 1px solid rgba(255, 2550, 255, 0.35);
 }
 
 .footDisp{
@@ -493,4 +495,10 @@ li{
     position: absolute;
     cursor:default;
     /* visibility: hidden; */
+}
+
+#submitBtn{
+    visibility: hidden;
+    cursor: pointer;
+    display: block;
 }

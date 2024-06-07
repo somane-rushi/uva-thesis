@@ -22,9 +22,7 @@
 	
 	<!-- favicon -->
 	<!-- ... -->
-	 <script>
-		function 
-	 </script>
+	 
 </head>
 <body class="page-brand">
 	<main>
@@ -46,38 +44,16 @@
 								<!--  -->
 							
 								<div class="table-responsive margin-bottom-lg padding-bottom-lg" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000">
-									<table class="table scoreboardTable margin-bottom-lg text-center" title="Quiz Scoreboard">
+									<table class="table scoreboardTable margin-bottom-lg text-center" id="userScore" title="Quiz Scoreboard">
 										<thead>
 											<tr>
 												<th class="fontQ text-center">User Name</th>
 												<th class="fontQ text-center">Score</th>
-												<th class="fontQ text-center">Time Taken (mm:ss)</th>
+												<th class="fontQ text-center">Time Taken</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td class="fontQ">abc@xyz.com</td>
-												<td class="fontQ">3</td>
-												<td class="fontQ"></td>											
-											</tr>
-											<!--  -->
-											<tr>
-												<td class="fontQ">abc@xyz.com</td>
-												<td class="fontQ">4</td>											
-												<td class="fontQ">5.00</td>											
-											</tr>
-											<!--  -->
-											<tr>
-												<td class="fontQ">abc@xyz.com</td>
-												<td class="fontQ">5</td>	
-												<td class="fontQ">5.00</td>																					
-											</tr>
-											<!--  -->
-											<tr>
-												<td class="fontQ">abc@xyz.com</td>
-												<td class="fontQ">6</td>
-												<td class="fontQ">5.00</td>																						
-											</tr>
+											 
 										</tbody>
 									</table>
 								</div>
@@ -113,6 +89,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="js/base.min.js"></script>
 	<script src="js/project.min.js"></script>
+
+	<!--  -->
+
+	<script>
+		$(function() {
+			var users = [];
+
+			$.getJSON('users.json', function(data) {
+				$.each(data.users, function(i, f) {
+				var tblRow = "<tr>" + "<td >" + f.userName + "</td>" +
+					"<td >" + f.score + "</td>" + "<td >" + f.timeTaken + "</td>" + "</tr>"
+					$(tblRow).appendTo("#userScore tbody");
+			});
+
+			});
+
+			}); 
+	 </script>
 
 	<!-- AOS JS -->
 	<script src="js/aos.js"></script>

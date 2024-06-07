@@ -2,7 +2,7 @@
 let paintings = [];
 let displayedPaintings = [];
 let paintingCounter = 0;
-const maxPaintings = 5;
+const maxPaintings = 6; // to show 5 random paintings
 
 function getRandomPainting() {
     const remainingPaintings = paintings.filter(painting => !displayedPaintings.includes(painting.paintingID));
@@ -65,6 +65,16 @@ paintingHint.addEventListener('click', function(){
     boundBox.style.border = '2px solid #d55140';
 });
 
+// Love Painting
+var lovePaint = document.getElementById('lovePainting');
+
+lovePaint.addEventListener('click', function() {
+    var hoverTxt = lovePaint.querySelector('.hoverTxt');
+    hoverTxt.classList.toggle('active');
+});
+
+
+// Submit Button
 document.getElementById('submitBtn').addEventListener('click', function() {
     if (paintingCounter < maxPaintings - 1) {
         const painting = getRandomPainting();
@@ -75,7 +85,8 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     }
 });
 
-fetch('paintings.json') // Replace with the actual path to your JSON file
+// Paintings JSON data
+fetch('paintings.json') 
     .then(response => response.json())
     .then(data => {
         paintings = Object.values(data);

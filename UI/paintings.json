@@ -11,9 +11,7 @@
     "bboxTop": "216px",
     "bboxLeft": "354px",
     "question": "In a sunlit room, I quietly stand, pouring milk with a steady hand. Absorbed in my task, I remain serene, bringing life to this humble scene. Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0
   },
   "2": {
     "paintingID": "SK-A-2344",
@@ -27,9 +25,7 @@
     "bboxTop": "818px",
     "bboxLeft": "320px",
     "question": "I sit upon the table, ready to receive, the stream of milk that flows with ease. In Vermeer's scene, I catch the pour, what am I, waiting for more? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0
   },
   "3": {
     "paintingID": "SK-A-299",
@@ -43,9 +39,7 @@
     "bboxTop": "609px",
     "bboxLeft": "511px",
     "question": "I roam the fields with gun in hand, seeking game across the land. In the tavern's garden, I take my ease, puffing on my pipe with quiet peace. Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "4": {
     "paintingID": "SK-A-299",
@@ -59,9 +53,7 @@
     "bboxTop": "943px",
     "bboxLeft": "3px",
     "question": "A traveler's companion, by his side it stays, carrying secrets of his journey's ways. Handle with care, for within it holds, tales of adventures, both new and old. What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "5": {
     "paintingID": "SK-A-385",
@@ -75,9 +67,7 @@
     "bboxTop": "518px",
     "bboxLeft": "79px",
     "question": "Tears flow freely, in this festive space, a wailing child, in a somber embrace. A switch in my shoe, a lesson learned, in this joyful feast, my fate is discerned. Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "6": {
     "paintingID": "SK-A-385",
@@ -91,9 +81,7 @@
     "bboxTop": "1255px",
     "bboxLeft": "161px",
     "question": "Amidst the loaves, I sit with pride, a round and red fruit by their side. In Jan Steen's feast, amidst the cheer, what am I, among bread so near? What do you see?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "7": {
     "paintingID": "SK-A-718",
@@ -107,9 +95,7 @@
     "bboxTop": "423px",
     "bboxLeft": "529px",
     "question": "With a shawm in hand, I lead the dance, though the cat protests, I take my chance. My notes guide the fun, in this mischievous play, who am I, making music today? Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "8": {
     "paintingID": "SK-A-718",
@@ -123,9 +109,7 @@
     "bboxTop": "866px",
     "bboxLeft": "400px",
     "question": "With a bark that matches the cat's protest, I add my voice to this lively fest. Among the children, I stand and prance, who am I, in this dancing chance? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "9": {
     "paintingID": "SK-A-1140",
@@ -139,9 +123,7 @@
     "bboxTop": "591px",
     "bboxLeft": "466px",
     "question": "With swishing tail and coat of cream, I provide milk as part of nature's stream. Amidst the scene, with milkmaid near, what am I, in this moment clear? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "10": {
     "paintingID": "SK-A-1595",
@@ -155,9 +137,7 @@
     "bboxTop": "413px",
     "bboxLeft": "353px",
     "question": "In Vermeer's scene, I play a part, bringing news that touches the heart. With the letter now passed, I step aside, who am I, in this room, to abide? Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "11": {
     "paintingID": "SK-A-3930",
@@ -171,9 +151,7 @@
     "bboxTop": "13px",
     "bboxLeft": "101px",
     "question": "Amidst the symbols of fleeting time, I freeze a moment in ancient rhyme. A thorn from my foot, I pull with care, a timeless act in still life's stare. Who am I, in this sculpted affair? Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "12": {
     "paintingID": "SK-A-3930",
@@ -187,9 +165,7 @@
     "bboxTop": "273px",
     "bboxLeft": "446px",
     "question": "Amidst the symbols of transient delight, I stand empty, devoid of wine's might. Tall and elegant, but lacking in cheer, what am I, in this scene so austere? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "13": {
     "paintingID": "SK-A-3930",
@@ -203,9 +179,7 @@
     "bboxTop": "268px",
     "bboxLeft": "884px",
     "question": "In the solemn scene, I quietly wait, a vacant space within this somber state. Though nameless here, my purpose clear, offering comfort in this realm of fear. What am I, in this tableau austere?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "14": {
     "paintingID": "SK-A-3930",
@@ -219,9 +193,7 @@
     "bboxTop": "647px",
     "bboxLeft": "228px",
     "question": "Amidst the relics of fleeting time, I hold secrets in prose and rhyme. Pages turned, but my story remains, in this scene of life's transient strains. What am I, with a sketch drawn within?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "15": {
     "paintingID": "SK-C-121",
@@ -235,9 +207,7 @@
     "bboxTop": "392px",
     "bboxLeft": "398px",
     "question": "With a sturdy frame and a flowing mane, I stand tall, my presence plain. Held by the reins, in the servant's care, what am I, amidst the scene so fair? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "16": {
     "paintingID": "SK-C-121",
@@ -251,9 +221,7 @@
     "bboxTop": "677px",
     "bboxLeft": "73px",
     "question": "With fleece so soft and a gentle bleat, I roam the field, my presence sweet. Among the children, where laughter's rife, what am I, adding to their joyful life? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "17": {
     "paintingID": "SK-C-121",
@@ -267,9 +235,7 @@
     "bboxTop": "762px",
     "bboxLeft": "402px",
     "question": "With wagging tail and playful bark, I join the children in the park. Amidst their joy, under the tree's sway, what am I, in this lively display? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0
   },
   "18": {
     "paintingID": "SK-C-147",
@@ -283,9 +249,7 @@
     "bboxTop": "775px",
     "bboxLeft": "369px",
     "question": "In the entrance hall, I patiently wait, a resting spot near the open gate. Sturdy and silent, I hold my place, what am I, in this domestic space? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "19": {
     "paintingID": "SK-C-147",
@@ -299,9 +263,7 @@
     "bboxTop": "1024px",
     "bboxLeft": "252px",
     "question": "In the entrance hall, I stand with grace, a faithful friend in this quiet place. My presence is loyal, yet keen, what am I, in this serene scene? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "20": {
     "paintingID": "SK-C-147",
@@ -315,9 +277,7 @@
     "bboxTop": "640px",
     "bboxLeft": "665px",
     "question": "In this bright hall bathed in light's grace, I sit with a small dog on my lap, as a letter approaches. Central to the story in this painter's embrace, who am I in this depicted space? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "21": {
     "paintingID": "SK-C-229",
@@ -331,9 +291,7 @@
     "bboxTop": "508px",
     "bboxLeft": "837px",
     "question": "Amidst the merry noise and cheer, I take a sip, my face sincere. From the jug, a taste of delight, what am I, in this joyful sight? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "22": {
     "paintingID": "SK-C-229",
@@ -347,9 +305,7 @@
     "bboxTop": "297px",
     "bboxLeft": "420px",
     "question": "Raised in toast, with joy and glee, a glass of mirth, for all to see. In this merry gathering, full of grace, what am I, in this joyous space? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "23": {
     "paintingID": "SK-C-229",
@@ -363,9 +319,7 @@
     "bboxTop": "5px",
     "bboxLeft": "705px",
     "question": "Upon the shelf, I stand tall and green, in this scene of mirth, a lively sheen. A touch of nature in this bustling room, what am I, dispelling the gloom? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "24": {
     "paintingID": "K-C-535",
@@ -379,9 +333,7 @@
     "bboxTop": "266px",
     "bboxLeft": "237px",
     "question": "With folded hands and bowed head, I offer prayers before breaking bread. Amidst the scene of grace so grand, who am I, in prayer's gentle hand? Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "25": {
     "paintingID": "K-C-535",
@@ -395,9 +347,7 @@
     "bboxTop": "1101px",
     "bboxLeft": "986px",
     "question": "With eager eyes and playful grace, I wait for scraps in this sacred space. Amidst the meal, with longing stare, who am I, seeking food to share? Who am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0   
   },
   "26": {
     "paintingID": "K-C-535",
@@ -411,8 +361,6 @@
     "bboxTop": "1018px",
     "bboxLeft": "716px",
     "question": "With gleaming edge and metal sheen, I stand ready for the feast unseen. Amidst the table, with task to bear, what am I, in this scene so fair? What am I?",
-    "lovePainting": 0,
-    "paintLike": 0,
-    "paintDisLike": 0
+    "lovePainting": 0
   }
 }

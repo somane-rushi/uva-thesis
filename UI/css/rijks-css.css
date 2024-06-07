@@ -217,6 +217,10 @@ p.fontQ{
     animation: colorChange 1.75s infinite;
 }
 
+.hoverTxt{
+    cursor: pointer;
+}
+
 .hoverTxt:hover,
 .hoverTxt.active{
     color: #d55140 !important;

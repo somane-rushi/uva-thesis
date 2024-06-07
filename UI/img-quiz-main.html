@@ -56,11 +56,11 @@
                         <!--  -->
                         <div class="divFullBlock posRelative">
                             <img src=""  class="mainImg" id="mainImg" />
-                            <!-- main Image -->
+                            <!-- Main Image -->
                             <img src=""  class="maskImg" id="maskImg" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000"/>
-                            <!--   -->
+                            <!-- Masked Image -->
                             <div class="bbox" id="bbox"></div>
-                            <!-- <a href="javascript:void(0);"></a> -->
+                            <!-- BBox Coordinates -->
                         </div>
                         
                         <div class="row paintDisp">
@@ -71,49 +71,22 @@
                                         <span class="material-symbols-outlined text-white">help</span></a>
                                     </div>
                                     <div>
-                                        <h1 class="mainTitle pull-left" id="question">
-                                            <!-- In a sunlit room, I quietly stand, pouring milk with a steady hand. Absorbed in my task, I remain serene, bringing life to this humble scene. Who am I? -->
-                                        </h1>
+                                        <h1 class="mainTitle pull-left" id="question"></h1>
                                         <!-- Pass Painting Name and Year variables here -->
                                     </div>
-                                </div>
-                                
+                                </div>                                
                             </div>
                             <div class="col-md-3">                                
-                                <a class="btn btn-brand waves-attach waves-light fontQ pull-right submitBtn" id="submitBtn"> SUBMIT </a>
+                                <a class="btn btn-brand waves-attach waves-light fontQ pull-right submitBtn" id="submitBtn">&nbsp;SUBMIT&nbsp;</a>
                             </div>
-                        </div>
-                        <!-- row -->
-                        <!-- <div class="paintAction">
-                            <ul class="nav nav-list margin-bottom-no text-white">
-                                <li class="alignCenter margin-right">
-                                    <a href="javascript:void(0);" class="paintHint" id="paintHint">
-                                        <span class="material-symbols-outlined text-white hoverTxt">image_search</span>
-                                    </a>Need a hint!                   
-                                </li>
-                                <li class="alignCenter margin-right">
-                                    <a class="paintLike">                                
-                                        <span class="material-symbols-outlined text-white hoverTxt">thumb_up</span>
-                                    </a>Like the Question                                
-                                </li>
-                                <li class="alignCenter">
-                                    <a class="paintDisLike">
-                                        <span class="material-symbols-outlined text-white hoverTxt">thumb_down</span>
-                                    </a>Dislike the Question
-                                </li>                                
-                            </ul>
-                        </div> -->
-                        <!-- row -->
-                    </div>
-                    <!-- Painting Description -->                                    
-                </div>
-                <!--  -->
-                
+                        </div><!-- row -->                        
+                    </div><!-- Painting Description -->                                    
+                </div><!--  -->                
             </section>
             <!-- Painting Section -->
             <section>
                 <div class="footerMain infoCard">
-                    <div class="">
+                    <div class="divFullBlock">
                         <div class="row margin-left-no margin-right-no" style="display: flex; align-items: center; justify-content: center;">
                             <div class="col-md-6">
                                 <img src="images/uva-logo.png" class="uvaLogo" alt="UVA" />
@@ -129,6 +102,7 @@
             <!-- Quiz Section -->
         </main>
         <!-- End of Main -->
+        
         <!-- Description Pop Up -->
         <div aria-hidden="true" class="modal fade" id="popUpBox" role="dialog" tabindex="-1">
             <div class="modal-dialog">
@@ -157,12 +131,11 @@
         </div>
         <!-- End of Description Pop Up -->
         
-        <!-- Show/Hide Quiz section Toggle -->
         <!-- js -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="js/base.min.js"></script>
         <script src="js/project.min.js"></script>
-        <!-- Data JS -->
+        <!-- Painting Data JS -->
         <script src="js/data-json.js"></script>
         <!-- Main JS -->
         <script src="js/main.js"></script>

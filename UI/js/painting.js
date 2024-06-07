@@ -1,3 +1,46 @@
+var clickTimer;
+var clickableDiv = document.getElementById('bbox');
+var image = document.getElementById('maskImg');
+var sb = document.getElementById('submitBtn');
+
+clickableDiv.addEventListener('mousedown', function() {
+    // Start the timer when the mouse is pressed down on the div
+    clickTimer = setTimeout(function() {
+        // Show the image after approximately 2 seconds
+        image.style.visibility = 'visible';
+        sb.style.visibility = 'visible';
+    }, 2000);
+});    
+
+// BBox Hint
+var boundBox = document.getElementById('bbox');
+var paintingHint = document.getElementById('paintHint');
+
+paintingHint.addEventListener('click', function(){
+    boundBox.style.border = '2px solid #d55140';
+});
+
+// Array of HTML page filenames
+const pages = ["img-quiz-1.html", "img-quiz-2.html", "img-quiz-3.html", "img-quiz-4.html", "img-quiz-5.html", "img-quiz-6.html", "img-quiz-7.html", "img-quiz-8.html", "img-quiz-9.html", "img-quiz-10.html"];
+
+// Function to get a random page and remove it from the array
+function getRandomPage() {
+    if (pages.length === 0) {
+        // alert("All pages have been opened!");
+        return null;
+    }
+    const randomIndex = Math.floor(Math.random() * pages.length);
+    const selectedPage = pages.splice(randomIndex, 1)[0];
+    return selectedPage;
+}
+
+// Event listener for the button click
+document.getElementById("randomButton").addEventListener("click", () => {
+    const randomPage = getRandomPage();
+    if (randomPage) {
+        window.location.href = randomPage; // Navigates to the page in the same window
+    }
+});
 
 let paintings = [];
 let displayedPaintings = [];
@@ -23,47 +66,20 @@ function displayPainting(painting) {
     document.getElementById('question').innerText = painting.question;
     document.getElementById('mainImg').src = painting.mainImg;
     document.getElementById('maskImg').src = painting.maskImg;
+    
+    // Hide Image Mask, BBox and Submit btn on new page load.
+    document.getElementById('maskImg').style.visibility = 'hidden';
+    document.getElementById('submitBtn').style.visibility = 'hidden';
+    document.getElementById('bbox').style.visibility = 'hidden';
 
-    document.getElementById('paintingContainer').style.display = 'block';    
+    document.getElementById('paintingContainer').style.display = 'block';
 
     const bbox = document.getElementById('bbox');
     bbox.style.width = painting.bboxWidth;
     bbox.style.height = painting.bboxHeight;
     bbox.style.top = painting.bboxTop;
     bbox.style.left = painting.bboxLeft;
-
-    // Reset visibility
-    document.getElementById('maskImg').style.visibility = 'hidden';
-    document.getElementById('bbox').style.border = 'none';
-    document.getElementById('submitBtn').style.visibility = 'hidden';
 }
-
-var clickTimer;
-var clickableDiv = document.getElementById('bbox');
-var image = document.getElementById('maskImg');
-var sb = document.getElementById('submitBtn');
-
-clickableDiv.addEventListener('mousedown', function() {
-    // Start the timer when the mouse is pressed down on the div
-    clickTimer = setTimeout(function() {
-        // Show the image and submit button after approximately 2 seconds
-        image.style.visibility = 'visible';
-        sb.style.visibility = 'visible';
-    }, 2000);
-});  
-
-clickableDiv.addEventListener('mouseup', function() {
-    // Clear the timer if the mouse is released before 2 seconds
-    clearTimeout(clickTimer);
-});
-
-// BBox Hint
-var boundBox = document.getElementById('bbox');
-var paintingHint = document.getElementById('paintHint');
-
-paintingHint.addEventListener('click', function(){
-    boundBox.style.border = '2px solid #d55140';
-});
 
 document.getElementById('submitBtn').addEventListener('click', function() {
     if (paintingCounter < maxPaintings - 1) {

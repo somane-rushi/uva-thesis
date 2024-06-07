@@ -1,54 +1,86 @@
 
+let paintings = [];
+let displayedPaintings = [];
+let paintingCounter = 0;
+const maxPaintings = 5;
 
-// //
-// var clickTimer;
-// var clickableDiv = document.getElementById('bbox');
-// var image = document.getElementById('maskImg');
-// var sb = document.getElementById('submitBtn');
+function getRandomPainting() {
+    const remainingPaintings = paintings.filter(painting => !displayedPaintings.includes(painting.paintingID));
+    if (remainingPaintings.length === 0) {
+        displayedPaintings = [];
+        return getRandomPainting();
+    }
+    const randomPainting = remainingPaintings[Math.floor(Math.random() * remainingPaintings.length)];
+    displayedPaintings.push(randomPainting.paintingID);
+    return randomPainting;
+}
 
-// clickableDiv.addEventListener('mousedown', function() {
-//     // Start the timer when the mouse is pressed down on the div
-//     clickTimer = setTimeout(function() {
-//         // Show the image after approximately 2 seconds
-//         image.style.visibility = 'visible';
-//         sb.style.visibility = 'visible';
-//     }, 2000);
+function displayPainting(painting) {
+    document.getElementById('paintingID').innerText = painting.paintingID;
+    document.getElementById('paintingName').innerText = painting.paintingName;
+    document.getElementById('painterName').innerText = painting.painterName;
+    document.getElementById('paintingDescription').innerText = painting.paintingDescription;
+    document.getElementById('question').innerText = painting.question;
+    document.getElementById('mainImg').src = painting.mainImg;
+    document.getElementById('maskImg').src = painting.maskImg;
 
-// });    
+    document.getElementById('paintingContainer').style.display = 'block';    
 
+    const bbox = document.getElementById('bbox');
+    bbox.style.width = painting.bboxWidth;
+    bbox.style.height = painting.bboxHeight;
+    bbox.style.top = painting.bboxTop;
+    bbox.style.left = painting.bboxLeft;
 
+    // Reset visibility
+    document.getElementById('maskImg').style.visibility = 'hidden';
+    document.getElementById('bbox').style.border = 'none';
+    document.getElementById('submitBtn').style.visibility = 'hidden';
+}
 
-// // BBox Hint
+var clickTimer;
+var clickableDiv = document.getElementById('bbox');
+var image = document.getElementById('maskImg');
+var sb = document.getElementById('submitBtn');
 
-// var boundBox = document.getElementById('bbox');
-// var paintingHint = document.getElementById('paintHint');
+clickableDiv.addEventListener('mousedown', function() {
+    // Start the timer when the mouse is pressed down on the div
+    clickTimer = setTimeout(function() {
+        // Show the image and submit button after approximately 2 seconds
+        image.style.visibility = 'visible';
+        sb.style.visibility = 'visible';
+    }, 2000);
+});  
 
-// paintingHint.addEventListener('click', function(){
-//     boundBox.style.border = '2px solid #d55140';
-// });
+clickableDiv.addEventListener('mouseup', function() {
+    // Clear the timer if the mouse is released before 2 seconds
+    clearTimeout(clickTimer);
+});
 
-// // Array of HTML page filenames
-// const pages = ["img-quiz-1.html", "img-quiz-2.html", "img-quiz-3.html", "img-quiz-4.html", "img-quiz-5.html", "img-quiz-6.html", "img-quiz-7.html", "img-quiz-8.html", "img-quiz-9.html", "img-quiz-10.html"];
+// BBox Hint
+var boundBox = document.getElementById('bbox');
+var paintingHint = document.getElementById('paintHint');
 
-// // Function to get a random page and remove it from the array
-// function getRandomPage() {
-//     if (pages.length === 0) {
-//        // alert("All pages have been opened!");
-//         return null;
-//     }
-//     const randomIndex = Math.floor(Math.random() * pages.length);
-//     const selectedPage = pages.splice(randomIndex, 1)[0];
-//     return selectedPage;
-// }
+paintingHint.addEventListener('click', function(){
+    boundBox.style.border = '2px solid #d55140';
+});
 
-// // Event listener for the button click
-// document.getElementById("randomButton").addEventListener("click", () => {
-//     const randomPage = getRandomPage();
-//     if (randomPage) {
-//         window.location.href = randomPage; // Navigates to the page in the same window
-//     }
-// });
+document.getElementById('submitBtn').addEventListener('click', function() {
+    if (paintingCounter < maxPaintings - 1) {
+        const painting = getRandomPainting();
+        displayPainting(painting);
+        paintingCounter++;
+    } else {
+        window.location.href = 'scoreboard.html'; // Or 'scoreboard.html'
+    }
+});
 
-
-//
-
+fetch('paintings.json') // Replace with the actual path to your JSON file
+    .then(response => response.json())
+    .then(data => {
+        paintings = Object.values(data);
+        const initialPainting = getRandomPainting();
+        displayPainting(initialPainting);
+        paintingCounter++;
+    })
+    .catch(error => console.error('Error fetching the paintings:', error));

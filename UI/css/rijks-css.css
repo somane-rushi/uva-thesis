@@ -15,6 +15,11 @@ body{
   'opsz' 24
 }
 
+.ruleIcons{
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+}
+
 .artist-screen{
     width: 100%;
     height: auto;
@@ -110,7 +115,7 @@ h3.fontQ{
     font-size: 1.125rem;
     text-align: left;
     margin: 0;
-    padding: 0px 0px 50px;
+    padding: 0px 0px 35px;
 }
 
 h1.fontQ{
@@ -443,7 +448,7 @@ li{
     line-height: 1.5;
 }
 .page-brand .header-transparent:before{
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.35);
 }
 .header:after{
     box-shadow: none;

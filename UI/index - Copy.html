@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta content="IE=edge" http-equiv="X-UA-Compatible">
         <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
-        <title>RIJKSMUSEUM - DSP</title>
+        <title>University of Amsterdam - Masters Thesis Project - R.R.Somane</title>
         <!-- css -->
         <link href="css/base.min.css" rel="stylesheet">
         <link href="css/project.min.css" rel="stylesheet">
@@ -15,50 +15,52 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+        <!-- Material Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <!-- favicon -->
         <!-- ... -->
-        <script>
-            // For Home page
-            function validateAndSubmit(event) {
-            event.preventDefault(); // Prevent the default form submission
-            
-            const userNameInput = document.getElementById('userName');
-            const userName = userNameInput.value;
-            const pattern = /^[A-Za-z ]+$/; // Allows only Alphabets and Space
-            
-            if (pattern.test(userName)) {
-            // Clear any existing timer and username in local storage
-            localStorage.removeItem('userName');
-            localStorage.removeItem('startTime');
-            localStorage.removeItem('localTimer');
-            
-            // Save the username to local storage
-            localStorage.setItem('userName', userName);
-            
-            // Save the start time to local storage
-            const startTime = new Date().getTime();
-            localStorage.setItem('startTime', startTime);
-            
-            // Redirect to the quiz.html page
-            window.location.href = 'quiz.html';
-            } else {
-            // Display custom warning message
-            userNameInput.setCustomValidity('Please enter only alphabets and spaces.');
-            userNameInput.reportValidity();
-            }
-            }
-            
-            function clearCustomValidity(event) {
-            event.target.setCustomValidity('');
-            }
-            
-            // Ensure local storage is cleared when the page loads
-            window.onload = function() {
-            localStorage.removeItem('userName');
-            localStorage.removeItem('startTime');
-            localStorage.removeItem('localTimer');
-            };
-            
+         <script>
+           
+         // For Home page
+function validateAndSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const userNameInput = document.getElementById('userName');
+    const userName = userNameInput.value;
+    const pattern = /^[A-Za-z ]+$/; // Allows only Alphabets and Space
+
+    if (pattern.test(userName)) {
+        // Clear any existing timer and username in local storage
+        localStorage.removeItem('userName');
+        localStorage.removeItem('startTime');
+        localStorage.removeItem('localTimer');
+
+        // Save the username to local storage
+        localStorage.setItem('userName', userName);
+
+        // Save the start time to local storage
+        const startTime = new Date().getTime();
+        localStorage.setItem('startTime', startTime);
+
+        // Redirect to the quiz.html page
+        window.location.href = 'quiz.html';
+    } else {
+        // Display custom warning message
+        userNameInput.setCustomValidity('Please enter only alphabets and spaces.');
+        userNameInput.reportValidity();
+    }
+}
+
+function clearCustomValidity(event) {
+    event.target.setCustomValidity('');
+}
+
+// Ensure local storage is cleared when the page loads
+window.onload = function() {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('startTime');
+    localStorage.removeItem('localTimer');
+};   
         </script>
     </head>
     <body class="page-brand">
@@ -101,23 +103,13 @@
                                     <div data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000">
                                         <h3 class="fontQ padding-bottom" >LOGIN:</h3>
                                         <!--  -->
-                                        <form class="form " onsubmit="validateAndSubmit(event)" action="index.html">
+                                        <form class="form" onsubmit="validateAndSubmit(event)" action="index.html">
                                             <div class="form-group form-group-label fontQ margin-top-no">
                                                 <label class="floating-label" for="userName">Enter User Name <span>(Only Alphabets)</span></label>
-                                                <input class="form-control" id="userName" type="text" pattern="[A-Za-z ]+" maxlength="15" oninput="clearCustomValidity(event)">
-                                                <!-- <div class="row">
-                                                    <div class="col-md-12">
-                                                        
-                                                    </div>
-                                                    </div> -->
+                                                <input class="form-control" id="userName" type="text" pattern="[A-Za-z ]+" maxlength="15" oninput="clearCustomValidity(event)">                                                
                                             </div>
                                             <div class="form-group">
-                                                <button class="btn pull-right btn-brand waves-attach waves-light">START</button>
-                                                <!-- <div class="row">
-                                                    <div class="col-md-12">
-                                                        
-                                                    </div>
-                                                    </div> -->
+                                                <button class="btn pull-right btn-brand waves-attach waves-light" type="submit">START</button>                                                
                                             </div>
                                         </form>
                                     </div>
@@ -143,9 +135,6 @@
                     </div>
                     <!-- Footer -->
                 </div>
-
-                <!--  -->
-                
             </section>
             <!-- Artist Section -->
         </main>

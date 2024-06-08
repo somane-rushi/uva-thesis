@@ -1,8 +1,35 @@
+// For Home page
+function validateAndSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const userNameInput = document.getElementById('userName');
+    const userName = userNameInput.value;
+    const pattern = /^[A-Za-z]+$/;
+
+    if (pattern.test(userName)) {
+        // Save the username to local storage
+        localStorage.setItem('userName', userName);
+
+        // Redirect to the quiz.html page
+        window.location.href = 'quiz.html';
+    } else {
+        // Display custom warning message
+        userNameInput.setCustomValidity('Please enter only alphabets.');
+        userNameInput.reportValidity();
+    }
+}
+
+function clearCustomValidity(event) {
+    event.target.setCustomValidity('');
+}
+
+
+// Quiz page
 
 let paintings = [];
 let displayedPaintings = [];
 let paintingCounter = 0;
-const maxPaintings = 6; // to show 5 random paintings
+const maxPaintings = 2; // Input 6 to show 5 random paintings
 
 function getRandomPainting() {
     const remainingPaintings = paintings.filter(painting => !displayedPaintings.includes(painting.paintingID));
@@ -49,7 +76,8 @@ clickableDiv.addEventListener('mousedown', function() {
         // Show the image and submit button after approximately 2 seconds
         image.style.visibility = 'visible';
         sb.style.visibility = 'visible';
-    }, 2000);
+    }, 1800);   
+    // Approx 2 secs
 });  
 
 clickableDiv.addEventListener('mouseup', function() {

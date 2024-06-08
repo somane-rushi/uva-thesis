@@ -35,10 +35,10 @@
 								<div class="col-sm-12">
 									<h3 class="fontQ" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">Embark on a journey through the breathtaking masterpieces of the Rijksmuseum and uncover the mesmerizing details that define Dutch art's timeless allure. Delve into the hidden depths of renowned paintings as you solve riddles and unearth fascinating secrets concealed within each stroke of the brush. Explore the rich tapestry of stories woven into every canvas, where each object serves as a vital piece of the larger narrative. With keen eyes and a spirit of discovery, immerse yourself in the beauty of Dutch art and reveal its hidden treasures with a simple click.</h3>	
 								</div>
-                                <div class="col-md-6">
-									<h3 class="fontQ" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
-										RULES:
-										<ul>
+                                <div class="col-md-8">
+                                    <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+									    <h3 class="fontQ" >RULES:</h3>
+                                        <ul class="text-white">
 											<li>Enter your name and email address to start.</li>
 											<li>These details help track your scores and time for the Leaderboard.</li>
 											<li>Discover three unique objects in each painting by clicking on them.</li>
@@ -46,37 +46,32 @@
 											<li>Earn a point for each correctly identified object.</li>
 											<li>Complete a quick survey via Google Forms after the game.</li>
 										</ul>
-									</h3>
+                                    </div>    
 								</div>
-								<div class="col-md-6">
-									<div data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000">
-										<form class="form" action="index.html">
-											<div class="form-group form-group-label fontQ">
-												<div class="row">
-													<div class="col-md-10 col-md-push-1">
-														<label class="floating-label" for="login_username">Enter Name</label>
-														<input class="form-control" id="login_username" type="text">
-													</div>
-												</div>
-											</div>
-											<!-- <div class="form-group form-group-label fontQ">
-												<div class="row">
-													<div class="col-md-10 col-md-push-1">
-														<label class="floating-label" for="login_email">Enter Email Address</label>
-														<input class="form-control" id="login_email" type="email" id="email" pattern=".+@example\.com" size="30" required >
-													</div>
-												</div>
-											</div> -->
-											<div class="form-group">
-												<div class="row">
-													<div class="col-md-10 col-md-push-1">
-														<button class="btn pull-right btn-brand waves-attach waves-light">START</button>
-													</div>
-												</div>
-											</div>									
-										</form>
-									</div>
-									
+								<div class="col-md-4">
+									<div data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
+                                        <h3 class="fontQ" >LOGIN:</h3>
+										<form class="form " onsubmit="validateAndSubmit(event)" action="index.html">
+                                            <div class="form-group form-group-label fontQ margin-top-no">
+                                                <label class="floating-label" for="userName">Enter User Name <span>(Only Alphabets)</span></label>
+                                                        <input class="form-control" id="userName" type="text" pattern="[A-Za-z]+" oninput="clearCustomValidity(event)">
+                                                <!-- <div class="row">
+                                                    <div class="col-md-12">
+                                                        
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <button class="btn pull-right btn-brand waves-attach waves-light">START</button>
+                                                <!-- <div class="row">
+                                                    <div class="col-md-12">
+                                                        
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </form>
+									</div>									
 								</div>								                                
                             </div>
 							
@@ -104,6 +99,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="js/base.min.js"></script>
         <script src="js/project.min.js"></script>
+        <!-- Main JS -->
+         <script src="js/main.js"></script>
         <!-- AOS JS -->
         <script src="js/aos.js"></script>
         <script>

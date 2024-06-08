@@ -27,29 +27,28 @@
                 <header class="header header-transparent header-waterfall ui-header" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000" >
                     <div class="margin-right margin-left">
                         <a class="header-logo header-affix-hide margin-left-no margin-right-no" >
-                            <img src="images/rijksmuseum-white.svg" alt="" class="rijksLogoNav " />
+                        <img src="images/rijksmuseum-white.svg" alt="" class="rijksLogoNav " />
                         </a>                
-                        <ul class="nav nav-list pull-right">                        
+                        <ul class="nav nav-list pull-right">
                             <!-- <li>
                                 <a class="paintHint" id="paintHint">
                                     <span class="material-symbols-outlined text-white hoverTxt">image_search</span>
                                 </a>
-                            </li> -->
+                                </li> -->
                             <li>
                                 <a class="lovePainting" id="lovePainting">                                
-                                    <span class="material-symbols-outlined text-white hoverTxt">favorite</span>
+                                <span class="material-symbols-outlined text-white hoverTxt">favorite</span>
                                 </a><!-- pulseText -->
                             </li>
                             <li>
                                 <a class="" data-toggle="modal" href="#popUpBox">
-                                    <span class="material-symbols-outlined text-white hoverTxt">info</span>
+                                <span class="material-symbols-outlined text-white hoverTxt">info</span>
                                 </a><!-- pulseText -->
-                            </li>                            
+                            </li>
                         </ul>
                     </div>
                 </header>
                 <!-- Header -->
-                
                 <div class="imageScreen" id="paintingContainer">
                     <!-- id="paintingBanner" -->
                     <div class="divFullBlock maxWidth margin-top-lg padding-top-lg" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
@@ -62,7 +61,6 @@
                             <div class="bbox" id="bbox"></div>
                             <!-- BBox Coordinates -->
                         </div>
-                        
                         <div class="row paintDisp">
                             <div class="col-md-9">
                                 <div class="mainTitle card-heading">
@@ -74,35 +72,38 @@
                                         <h1 class="mainTitle pull-left" id="question"></h1>
                                         <!-- Pass Painting Name and Year variables here -->
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                             <div class="col-md-3">                                
                                 <a class="btn btn-brand waves-attach waves-light fontQ pull-right submitBtn" id="submitBtn">
-                                    &nbsp;NEXT PAINTING&nbsp;</a>
+                                &nbsp;NEXT PAINTING&nbsp;</a>
                             </div>
-                        </div><!-- row -->      
+                        </div>
+                        <!-- row -->      
                         <div class="paintAction">
                             <ul class="nav nav-list margin-bottom-no text-white">
                                 <li class="alignCenter margin-right">
                                     <a class="paintHint" id="paintHint">
-                                        <span class="material-symbols-outlined text-white hoverTxt">image_search</span>
+                                    <span class="material-symbols-outlined text-white hoverTxt">image_search</span>
                                     </a>Need a hint!                   
                                 </li>
                                 <li class="alignCenter margin-right">
                                     <a class="paintLike">                                
-                                        <span class="material-symbols-outlined text-white hoverTxt">thumb_up</span>
+                                    <span class="material-symbols-outlined text-white hoverTxt">thumb_up</span>
                                     </a>Like the Question                                
                                 </li>
                                 <li class="alignCenter">
                                     <a class="paintDisLike">
-                                        <span class="material-symbols-outlined text-white hoverTxt">thumb_down</span>
+                                    <span class="material-symbols-outlined text-white hoverTxt">thumb_down</span>
                                     </a>Dislike the Question
-                                </li>                                
+                                </li>
                             </ul>
                         </div>
                         <!-- row -->                  
-                    </div><!-- Painting Description -->                                    
-                </div><!--  -->                
+                    </div>
+                    <!-- Painting Description -->                                    
+                </div>
+                <!--  -->                
             </section>
             <!-- Painting Section -->
             <section>
@@ -123,7 +124,6 @@
             <!-- Quiz Section -->
         </main>
         <!-- End of Main -->
-        
         <!-- Description Pop Up -->
         <div aria-hidden="true" class="modal fade" id="popUpBox" role="dialog" tabindex="-1">
             <div class="modal-dialog">
@@ -134,29 +134,25 @@
                     </div>
                     <!-- Pop Up Close Div -->
                     <div class="modal-inner">
-                        <h1 class="paintingName" id="paintingName"></h1> 
+                        <h1 class="paintingName" id="paintingName"></h1>
                         <!-- Painting Name and Year -->
-                        
-                        <h1 class="painterName" id="painterName"></h1> 
+                        <h1 class="painterName" id="painterName"></h1>
                         <!-- Painter Name -->
-                        
                         <p class="paintingDescription" id="paintingDescription"></p>
                         <!-- Json - "paintingDescription" -->
                         <!-- Painting Description -->
-
-                        <p class="paintingID" id="paintingID"></p> <!-- Json - "paintingID" -->
+                        <p class="paintingID" id="paintingID"></p>
+                        <!-- Json - "paintingID" -->
                         <!-- Painting Dimensions -->
                     </div>
                 </div>
             </div>
         </div>
         <!-- End of Description Pop Up -->
-        
         <!-- js -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="js/base.min.js"></script>
         <script src="js/project.min.js"></script>
-        
         <!-- Main JS -->
         <script src="js/main.js"></script>
         <!-- AOS JS -->

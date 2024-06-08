@@ -61,6 +61,11 @@ body{
     margin: 0 auto;
 }
 
+.divHt{
+    width: 100%;
+    height: 35px;
+}
+
 .rijksDivTwo{
     width: 70%;
     height: auto;

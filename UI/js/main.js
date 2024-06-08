@@ -24,7 +24,7 @@ function displayPainting(painting) {
     document.getElementById('mainImg').src = painting.mainImg;
     document.getElementById('maskImg').src = painting.maskImg;
 
-    document.getElementById('paintingContainer').style.display = 'block';    
+    document.getElementById('paintingContainer').style.display = 'block';
 
     const bbox = document.getElementById('bbox');
     bbox.style.width = painting.bboxWidth;
@@ -43,16 +43,16 @@ var clickableDiv = document.getElementById('bbox');
 var image = document.getElementById('maskImg');
 var sb = document.getElementById('submitBtn');
 
-clickableDiv.addEventListener('mousedown', function() {
+clickableDiv.addEventListener('mousedown', function () {
     // Start the timer when the mouse is pressed down on the div
-    clickTimer = setTimeout(function() {
+    clickTimer = setTimeout(function () {
         // Show the image and submit button after approximately 2 seconds
         image.style.visibility = 'visible';
         sb.style.visibility = 'visible';
     }, 2000);
-});  
+});
 
-clickableDiv.addEventListener('mouseup', function() {
+clickableDiv.addEventListener('mouseup', function () {
     // Clear the timer if the mouse is released before 2 seconds
     clearTimeout(clickTimer);
 });
@@ -61,32 +61,55 @@ clickableDiv.addEventListener('mouseup', function() {
 var boundBox = document.getElementById('bbox');
 var paintingHint = document.getElementById('paintHint');
 
-paintingHint.addEventListener('click', function(){
+paintingHint.addEventListener('click', function () {
     boundBox.style.border = '2px solid #d55140';
 });
 
 // Love Painting
 var lovePaint = document.getElementById('lovePainting');
 
-lovePaint.addEventListener('click', function() {
+lovePaint.addEventListener('click', function () {
     var hoverTxt = lovePaint.querySelector('.hoverTxt');
     hoverTxt.classList.toggle('active');
 });
 
 
 // Submit Button
-document.getElementById('submitBtn').addEventListener('click', function() {
-    if (paintingCounter < maxPaintings - 1) {
+document.getElementById('submitBtn').addEventListener('click', function () {
+    if (paintingCounter < maxPaintings - 4) {
         const painting = getRandomPainting();
         displayPainting(painting);
         paintingCounter++;
     } else {
+
+        const startTime = new Date(localStorage.getItem('startTime').toString()) || new Date();
+        // Get the start time
+        const endTime = new Date();
+
+        // Calculate the time spent in milliseconds
+        const timeSpent = endTime - startTime;
+
+         // Convert the time spent to seconds
+        const timeSpentInMintues = timeSpent / 60000;
+
+        // // Get the minutes and seconds.
+        // const minutes = timeSpent.getMinutes();
+        // const seconds = timeSpent.getSeconds();
+
+        // // Pad the minutes and seconds with zeros if necessary.
+        // const formattedMinutes = minutes.toString().padStart(2, '0');
+        // const formattedSeconds = seconds.toString().padStart(2, '0');
+
+        // // Return the formatted time.
+        // var timeTaken = `${formattedMinutes}:${formattedSeconds}`;
+
+        localStorage.setItem('timeTaken', JSON.stringify(Math.round(timeSpentInMintues)));
         window.location.href = 'scoreboard.html'; // Or 'scoreboard.html'
     }
 });
 
 // Paintings JSON data
-fetch('paintings.json') 
+fetch('paintings.json')
     .then(response => response.json())
     .then(data => {
         paintings = Object.values(data);

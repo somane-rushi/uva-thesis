@@ -48,6 +48,9 @@ function displayPainting(painting) {
     document.getElementById('maskImg').style.visibility = 'hidden';
     document.getElementById('bbox').style.border = 'none';
     document.getElementById('submitBtn').style.visibility = 'hidden';
+
+    //
+    window.scrollTo(0, 0);
 }
 
 var clickTimer;

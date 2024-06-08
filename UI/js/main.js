@@ -1,35 +1,20 @@
-// For Home page
-function validateAndSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const userNameInput = document.getElementById('userName');
-    const userName = userNameInput.value;
-    const pattern = /^[A-Za-z]+$/;
-
-    if (pattern.test(userName)) {
-        // Save the username to local storage
-        localStorage.setItem('userName', userName);
-
-        // Redirect to the quiz.html page
-        window.location.href = 'quiz.html';
-    } else {
-        // Display custom warning message
-        userNameInput.setCustomValidity('Please enter only alphabets.');
-        userNameInput.reportValidity();
-    }
-}
-
-function clearCustomValidity(event) {
-    event.target.setCustomValidity('');
-}
-
-
+// Paintings JSON data
+fetch('paintings.json') 
+    .then(response => response.json())
+    .then(data => {
+        paintings = Object.values(data);
+        const initialPainting = getRandomPainting();
+        displayPainting(initialPainting);
+        paintingCounter++;
+    })
+    .catch(error => console.error('Error fetching the paintings:', error));
+    
 // Quiz page
 
 let paintings = [];
 let displayedPaintings = [];
 let paintingCounter = 0;
-const maxPaintings = 2; // Input 6 to show 5 random paintings
+const maxPaintings = 6; // Input 6 to show 5 random paintings
 
 function getRandomPainting() {
     const remainingPaintings = paintings.filter(painting => !displayedPaintings.includes(painting.paintingID));
@@ -94,12 +79,12 @@ paintingHint.addEventListener('click', function(){
 });
 
 // Love Painting
-var lovePaint = document.getElementById('lovePainting');
+// var lovePaint = document.getElementById('lovePainting');
 
-lovePaint.addEventListener('click', function() {
-    var hoverTxt = lovePaint.querySelector('.hoverTxt');
-    hoverTxt.classList.toggle('active');
-});
+// lovePaint.addEventListener('click', function() {
+//     var hoverTxt = lovePaint.querySelector('.hoverTxt');
+//     hoverTxt.classList.toggle('active');
+// });
 
 
 // Submit Button
@@ -113,13 +98,8 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     }
 });
 
-// Paintings JSON data
-fetch('paintings.json') 
-    .then(response => response.json())
-    .then(data => {
-        paintings = Object.values(data);
-        const initialPainting = getRandomPainting();
-        displayPainting(initialPainting);
-        paintingCounter++;
-    })
-    .catch(error => console.error('Error fetching the paintings:', error));
+//
+
+
+
+

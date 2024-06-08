@@ -17,6 +17,49 @@
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
         <!-- favicon -->
         <!-- ... -->
+        <script>
+            // For Home page
+function validateAndSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const userNameInput = document.getElementById('userName');
+    const userName = userNameInput.value;
+    const pattern = /^[A-Za-z ]+$/; // Allows only Alphabets and Space
+
+    if (pattern.test(userName)) {
+        // Clear any existing timer and username in local storage
+        localStorage.removeItem('userName');
+        localStorage.removeItem('startTime');
+        localStorage.removeItem('localTimer');
+
+        // Save the username to local storage
+        localStorage.setItem('userName', userName);
+
+        // Save the start time to local storage
+        const startTime = new Date().getTime();
+        localStorage.setItem('startTime', startTime);
+
+        // Redirect to the quiz.html page
+        window.location.href = 'quiz.html';
+    } else {
+        // Display custom warning message
+        userNameInput.setCustomValidity('Please enter only alphabets and spaces.');
+        userNameInput.reportValidity();
+    }
+}
+
+function clearCustomValidity(event) {
+    event.target.setCustomValidity('');
+}
+
+// Ensure local storage is cleared when the page loads
+window.onload = function() {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('startTime');
+    localStorage.removeItem('localTimer');
+};
+
+        </script>
     </head>
     <body class="page-brand">
         <main>
@@ -54,7 +97,7 @@
 										<form class="form " onsubmit="validateAndSubmit(event)" action="index.html">
                                             <div class="form-group form-group-label fontQ margin-top-no">
                                                 <label class="floating-label" for="userName">Enter User Name <span>(Only Alphabets)</span></label>
-                                                        <input class="form-control" id="userName" type="text" pattern="[A-Za-z]+" oninput="clearCustomValidity(event)">
+                                                <input class="form-control" id="userName" type="text" pattern="[A-Za-z ]+" maxlength="15" oninput="clearCustomValidity(event)">
                                                 <!-- <div class="row">
                                                     <div class="col-md-12">
                                                         
@@ -100,7 +143,7 @@
         <script src="js/base.min.js"></script>
         <script src="js/project.min.js"></script>
         <!-- Main JS -->
-         <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
         <!-- AOS JS -->
         <script src="js/aos.js"></script>
         <script>

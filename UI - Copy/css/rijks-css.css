@@ -1,0 +1,509 @@
+body{
+    padding: 0;
+    background: black;
+    font-family: 'Questrial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Material Fonts */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.artist-screen{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    background-image: url(../images/main-hall-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: cover;
+    background-attachment: fixed;
+}
+
+.imageScreen{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    /* display: flex; 
+    align-items: end; */
+} 
+
+#paintingBanner{
+    /* background-image: url(../images/the-night-watch.jpg); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* display: block; */
+    width: 100%;
+    height: 100vh;
+}
+
+.rijksDiv{
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.rijksDivTwo{
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background: red;
+}
+
+/* .paddLogo{
+    padding: 50px 0px 150px;
+} */
+
+.logoDiv{
+    padding: 50px 0px 175px;
+}
+
+.rijksLogo{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;   
+}
+
+.rijksLogoNav{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0 16px;
+}
+
+.rijksLogoLogin{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 50px 0px 175px;
+}
+
+.fontQ,
+.quizFont{
+    font-family: 'Questrial', sans-serif;
+}
+
+.quizFont{
+    font-size: 1.25rem !important;
+    color: white;
+}
+
+h3.fontQ{
+    color: white;
+    font-size: 1.125rem;
+    text-align: left;
+    margin: 0;
+    padding: 0px 0px 50px;
+}
+
+h1.fontQ{
+    color: white;
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 0px 0px 25px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+h2.fontQ{
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    padding: 15px 0px 50px;
+}
+
+h2.fontQ > a{
+    text-decoration: none;
+    color: white;
+}
+
+h2.fontQ > a:hover{
+    color: #d55140;
+    /* text-decoration: underline; */
+}
+
+p.fontQ{
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0 0;
+    /* 25px */
+    margin: 0 0;
+}
+
+.artistImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;    
+}
+
+.infoCard{
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding:24px 16px;
+}
+
+.btn-RED{
+    background-color: #d55140;
+}
+
+.card{
+    box-shadow: none;
+    margin: 25px auto 25px;
+}
+
+.card-action{
+    border: none;
+}
+
+/* .btn {
+    text-transform: none;
+    display: flex;
+    align-items: center;
+} */
+
+.img-hover-zoom {
+    height: 425px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+  }
+
+  .img-hover-zoom img {
+    transition: transform 1s ease-in-out;
+  }
+  
+  .img-hover-zoom:hover img {
+    transform: scale(1.25);
+  }
+
+.uvaLogo{
+    width: auto;
+    height: 100px;
+}
+
+@keyframes colorChange {
+    0% {
+      color: white;
+    }
+    50% {
+      color: #d55140;
+    }
+    100% {
+      color: white;
+    }
+}
+
+.pulseText {
+    animation: colorChange 1.75s infinite;
+}
+
+.hoverTxt{
+    cursor: pointer;
+}
+
+.hoverTxt:hover,
+.hoverTxt.active{
+    color: #d55140 !important;
+}
+
+.modal-close:focus, .modal-close:hover{
+    color: #d55140;
+    text-decoration: none;
+}
+
+/*  */
+.material-symbols-outlined{
+    line-height: 1.5 !important;
+}
+
+@media only screen and (min-width: 1440px){
+    .modal-dialog {
+        width: 960px;
+    }
+}
+
+.modal-content{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-close{
+    color: white;
+}
+
+.modal-dialog{
+    margin: 96px auto;
+}
+
+.btn-brand{
+    background-color: #d55140;
+    color: white;
+    font-family: 'Questrial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 9px 10px 8px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn-brand:hover{
+    background-color: white;
+    color: #d55140 !important;
+}
+
+.alignCenter{
+    display: flex !important;
+    align-items: center;
+}
+
+/*  */
+
+.mainTitle{
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0;
+    /* padding: 0px 0px 25px; */
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.paintingName{
+    font-family: 'Questrial', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    padding: 0 0;
+}
+
+.painterName{
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    padding: 0 0 24px;
+}
+
+.paintingType,
+.paintingDimensions,
+.paintingID{
+    font-family: 'Questrial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #a2abad;
+    margin: 0;
+    padding: 0;
+}
+
+.paintingDescription{
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    padding: 24px 0 36px;
+    display: block;
+}
+
+.paintDisp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 48px 0px;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.paintAction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0px 0px 48px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 2550, 255, 0.35);
+}
+
+.footDisp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    padding: 48px 16px;
+    bottom: 0;
+    width: 100%;
+}
+
+.quizDiv,
+#quiz{
+    width: 100%;
+    height: auto;
+    display: none;
+    padding: 100px 0;
+    margin: 0 0 75px 0;
+    background-color: black;
+}
+
+.quizTitle{
+    margin: 0 auto 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem !important;
+}
+
+.txtRed{
+    color: #d55140;
+    text-decoration: none;
+}
+
+.margin-bottom-md{margin-bottom: 24px!important}
+
+.checkbox-circle, .radiobtn-circle{
+    border: 2px solid rgba(213,81,64,.5);
+}
+
+/*  */
+
+label{
+    font-size: 1rem !important;
+}
+
+.answerTxt{
+    color: green !important;
+}
+
+.scoreboardTable{
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.table>thead td, .table>thead th{
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.table td, .table th{
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+.table>tbody>tr:hover{
+    background: none;
+};
+
+section.bgWhite{
+    background: white !important;
+    
+}
+
+.imageExpand{
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    display: block;
+}
+
+.footerMain {
+    /* bottom: 0;
+    position: absolute; */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+li{
+    line-height: 1.5;
+}
+.page-brand .header-transparent:before{
+    background: rgba(0, 0, 0, 0);
+}
+.header:after{
+    box-shadow: none;
+}
+
+.header-logo img{
+    max-height: 24px;
+}
+
+.sticky{
+    
+}
+
+.mainImg{
+    width: 100%; 
+    height: auto;
+    display: block;
+    position: absolute;
+}
+
+.maskImg{
+    width: 100%; 
+    height: auto;
+    display: block;
+    position: relative;
+    filter: saturate(10%);
+    visibility: hidden;
+}
+
+.divFullBlock{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.maxWidth{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.posRelative{
+    position: relative;
+}
+
+.posAbsolute{
+    position: absolute;
+}
+
+.bbox{
+    display: block;
+    background: none;
+    border: none;
+    position: absolute;
+    cursor: default;
+    /* visibility: hidden; */
+}
+
+#submitBtn{
+    visibility: hidden;
+    cursor: pointer;
+    display: block;
+}
